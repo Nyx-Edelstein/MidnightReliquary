@@ -35,6 +35,6 @@ export function getWorkBySlug(slug: string): Work | undefined {
 }
 
 // In a real implementation, this function would read the chapter HTML file
-export function getChapterContent(workSlug: string, chapterNum: number): string {
+export function getChapterContent(slug: string, chapterNum: number): string {
   return `<h2>Chapter ${chapterNum}</h2><p>This is the content of chapter ${chapterNum}.</p>`
 }
