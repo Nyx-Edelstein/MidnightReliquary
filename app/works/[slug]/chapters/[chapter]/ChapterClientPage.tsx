@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useParams, useRouter } from "next/navigation"
-import { getWorkBySlug } from "@/lib/works"
+import { getWorkBySlug, getChapterContent } from "@/lib/works"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 export default function ChapterClientPage() {
@@ -26,13 +26,29 @@ export default function ChapterClientPage() {
     }
     setWork(workData)
 
-    // Load chapter content without the title and horizontal rule
-    setChapterContent(`<p>This is the content of chapter ${chapterNum}.</p>`)
+    // Load chapter content from the HTML file
+    const chapterPath = getChapterContent(slug, chapterNum)
+
+    // Fetch the chapter content
+    fetch(chapterPath)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to load chapter: ${response.status}`)
+        }
+        return response.text()
+      })
+      .then((content) => {
+        setChapterContent(content)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.error("Error loading chapter:", error)
+        setChapterContent("<p>Error loading chapter content.</p>")
+        setLoading(false)
+      })
 
     // Save reading progress
     localStorage.setItem(`reading-progress-${slug}`, chapterNum.toString())
-
-    setLoading(false)
   }, [slug, chapterNum, router])
 
   if (loading || !work) {
