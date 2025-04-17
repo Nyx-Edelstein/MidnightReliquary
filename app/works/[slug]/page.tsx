@@ -1,6 +1,14 @@
-import { getWorkBySlug } from "@/lib/works"
+import { getWorkBySlug, getWorks } from "@/lib/works"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+
+// Generate static params for all works
+export function generateStaticParams() {
+  const works = getWorks()
+  return works.map((work) => ({
+    slug: work.slug,
+  }))
+}
 
 export default function WorkPage({ params }: { params: { slug: string } }) {
   const work = getWorkBySlug(params.slug)

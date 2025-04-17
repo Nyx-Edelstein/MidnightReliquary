@@ -1,8 +1,15 @@
-import { getWorkBySlug } from "@/lib/works"
-import Link from "next/link"
+import { getWorkBySlug, getWorks } from "@/lib/works"
 import { notFound } from "next/navigation"
+import ChaptersPageClient from "./ChaptersPageClient"
 
-// Fix the params type definition
+// Generate static params for all works
+export function generateStaticParams() {
+  const works = getWorks()
+  return works.map((work) => ({
+    slug: work.slug,
+  }))
+}
+
 export default function ChaptersPage({ params }: { params: { slug: string } }) {
   const work = getWorkBySlug(params.slug)
 
@@ -10,35 +17,5 @@ export default function ChaptersPage({ params }: { params: { slug: string } }) {
     notFound()
   }
 
-  return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <div className="mb-4">
-        <Link href={`/works/${work.slug}`} className="text-primary hover:underline">
-          ← Back to {work.title}
-        </Link>
-      </div>
-
-      <h1 className="text-3xl font-bold mb-8">Table of Contents</h1>
-
-      <div className="border border-border rounded-lg divide-y divide-border">
-        {Array.from({ length: work.chapterCount }).map((_, index) => {
-          const chapterNum = index + 1
-          return (
-            <Link
-              key={chapterNum}
-              href={`/works/${work.slug}/chapters/${chapterNum}`}
-              className="block p-4 hover:bg-accent transition-colors"
-            >
-              <div className="flex justify-between items-center">
-                <span className="font-medium">Chapter {chapterNum}</span>
-                <span className="text-sm text-gray-500 dark:text-gray-400">
-                  {/* Static placeholder since we can't use client components in static export */}
-                </span>
-              </div>
-            </Link>
-          )
-        })}
-      </div>
-    </div>
-  )
+  return <ChaptersPageClient work={work} />
 }
