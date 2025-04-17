@@ -1,6 +1,5 @@
-import { getWorkBySlug } from "@/lib/works"
+import { getWorks, getWorkBySlug } from "@/lib/works"
 import type { Metadata } from "next"
-import { allWorks } from "@/content/works"
 import ProgressPageClient from "./ProgressPageClient"
 
 export const dynamicParams = true
@@ -10,7 +9,8 @@ type Props = {
 }
 
 export async function generateStaticParams() {
-  return allWorks.map((work) => ({
+  const works = getWorks()
+  return works.map((work) => ({
     slug: work.slug,
   }))
 }
@@ -28,8 +28,6 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
     title: `${work.title} - Progress`,
   }
 }
-
-export const dynamic = "error"
 
 export default function ProgressPage() {
   return <ProgressPageClient />

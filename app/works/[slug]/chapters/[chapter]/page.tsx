@@ -1,18 +1,9 @@
-import { getWorkBySlug } from "@/lib/works"
+import { getWorks, getWorkBySlug } from "@/lib/works"
 import type { Metadata } from "next"
 import ChapterClientPage from "./ChapterClientPage"
 
 export async function generateStaticParams() {
-  const works = [
-    {
-      slug: "the-hound-of-the-baskervilles",
-      chapterCount: 12,
-    },
-    {
-      slug: "the-call-of-the-wild",
-      chapterCount: 7,
-    },
-  ]
+  const works = getWorks()
 
   return works.flatMap((work) =>
     Array.from({ length: work.chapterCount }, (_, i) => ({
@@ -28,7 +19,7 @@ export function generateMetadata({ params }: { params: { slug: string; chapter: 
   const work = getWorkBySlug(slug)
 
   return {
-    title: `${work?.title} - Chapter ${chapter}`,
+    title: work ? `${work.title} - Chapter ${chapter}` : "Chapter Not Found",
   }
 }
 
