@@ -38,7 +38,12 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
           Start Reading
         </Link>
 
-        <ContinueReadingButton slug={work.slug} chapterCount={work.chapterCount} />
+        <Link
+          href={`/works/${work.slug}/progress`}
+          className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 py-2 rounded-md text-center"
+        >
+          Current Progress
+        </Link>
       </div>
 
       <div className="border-t border-border pt-6">
@@ -51,17 +56,5 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
     </div>
-  )
-}
-
-// Client component for continue reading button
-const ContinueReadingButton = ({ slug, chapterCount }: { slug: string; chapterCount: number }) => {
-  return (
-    <Link
-      href={`/works/${slug}/progress`}
-      className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 py-2 rounded-md text-center"
-    >
-      Current Progress
-    </Link>
   )
 }

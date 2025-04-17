@@ -2,6 +2,7 @@ import { getWorkBySlug } from "@/lib/works"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 
+// Fix the params type definition
 export default function ChaptersPage({ params }: { params: { slug: string } }) {
   const work = getWorkBySlug(params.slug)
 
@@ -30,7 +31,9 @@ export default function ChaptersPage({ params }: { params: { slug: string } }) {
             >
               <div className="flex justify-between items-center">
                 <span className="font-medium">Chapter {chapterNum}</span>
-                <ChapterReadStatus workSlug={work.slug} chapterNum={chapterNum} />
+                <span className="text-sm text-gray-500 dark:text-gray-400">
+                  {/* Static placeholder since we can't use client components in static export */}
+                </span>
               </div>
             </Link>
           )
@@ -38,9 +41,4 @@ export default function ChaptersPage({ params }: { params: { slug: string } }) {
       </div>
     </div>
   )
-}
-
-// Client component for read status
-const ChapterReadStatus = ({ workSlug, chapterNum }: { workSlug: string; chapterNum: number }) => {
-  return <span className="text-sm text-gray-500 dark:text-gray-400">{/* This will be populated client-side */}</span>
 }

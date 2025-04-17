@@ -7,6 +7,7 @@ import { useParams, useRouter } from "next/navigation"
 import { getWorkBySlug } from "@/lib/works"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
+// Note: For static export, this client component will hydrate on the client side
 export default function ChapterPage() {
   const params = useParams()
   const router = useRouter()
