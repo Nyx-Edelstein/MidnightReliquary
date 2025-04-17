@@ -2,7 +2,8 @@ import { getWorks, getWorkBySlug } from "@/lib/works"
 import type { Metadata } from "next"
 import ProgressPageClient from "./ProgressPageClient"
 
-export const dynamicParams = true
+// Remove dynamicParams: true as it's incompatible with static export
+// export const dynamicParams = true
 
 type Props = {
   params: { slug: string }
@@ -28,6 +29,9 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
     title: `${work.title} - Progress`,
   }
 }
+
+// Remove dynamic: "error" as it's not needed for static export
+// export const dynamic = "error"
 
 export default function ProgressPage() {
   return <ProgressPageClient />
