@@ -1,3 +1,6 @@
+import fs from "fs"
+import path from "path"
+
 export type Work = {
   slug: string
   title: string
@@ -7,29 +10,29 @@ export type Work = {
   nextUpdate?: string
 }
 
-// Function to get all works from the public/works directory
+// Function to get all works from the works directory
 export function getWorks(): Work[] {
   try {
-    // For static export, we need to use mock data during build
-    // In a real server environment, this would scan the directory
-    return [
-      {
-        slug: "the-lost-kingdom",
-        title: "The Lost Kingdom",
-        description: "A fantasy adventure about a forgotten realm and the hero who must save it.",
-        chapterCount: 3,
-        lastUpdated: "2025-04-15",
-        nextUpdate: "2025-04-29",
-      },
-      {
-        slug: "beyond-the-stars",
-        title: "Beyond the Stars",
-        description: "A science fiction epic spanning galaxies and civilizations.",
-        chapterCount: 2,
-        lastUpdated: "2025-04-10",
-        nextUpdate: "2025-04-24",
-      },
-    ]
+    // In a static build, we need to read from the file system during build time
+    const worksDirectory = path.join(process.cwd(), "public/works")
+    const workFolders = fs
+      .readdirSync(worksDirectory)
+      .filter((folder) => fs.statSync(path.join(worksDirectory, folder)).isDirectory())
+
+    return workFolders.map((folder) => {
+      const metaPath = path.join(worksDirectory, folder, "meta.json")
+      const metaContent = fs.readFileSync(metaPath, "utf8")
+      const meta = JSON.parse(metaContent)
+
+      return {
+        slug: folder,
+        title: meta.title,
+        description: meta.description,
+        chapterCount: meta.chapterCount,
+        lastUpdated: meta.lastUpdated,
+        nextUpdate: meta.nextUpdate,
+      }
+    })
   } catch (error) {
     console.error("Error reading works directory:", error)
     return []
@@ -47,9 +50,13 @@ export function getWorkBySlug(slug: string): Work | undefined {
   }
 }
 
-// Function to get chapter content
+// Function to get chapter content - reads the actual file during build time
 export function getChapterContent(slug: string, chapterNum: number): string {
-  // For client-side usage, we'll return the path to the HTML file
-  // The actual content will be fetched by the client
-  return `/works/${slug}/chapters/${chapterNum}.html`
+  try {
+    const chapterPath = path.join(process.cwd(), "public/works", slug, "chapters", `${chapterNum}.html`)
+    return fs.readFileSync(chapterPath, "utf8")
+  } catch (error) {
+    console.error(`Error reading chapter content for ${slug}, chapter ${chapterNum}:`, error)
+    return "<p>Chapter content not found.</p>"
+  }
 }

@@ -28,7 +28,7 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
       <h1 className="text-3xl font-bold mb-6">{work.title}</h1>
 
       <div className="prose dark:prose-invert mb-8">
-        <div dangerouslySetInnerHTML={{ __html: work.description }} />
+        <p>{work.description}</p>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-12">
