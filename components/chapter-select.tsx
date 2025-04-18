@@ -13,6 +13,7 @@ export function ChapterSelect({ currentChapter, chapters, workSlug }: ChapterSel
   const router = useRouter()
 
   const handleValueChange = (value: string) => {
+    // Navigate to the selected chapter
     router.push(`/works/${workSlug}/chapters/${value}/`)
   }
 

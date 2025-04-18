@@ -1,6 +1,6 @@
 import { getWorks } from "@/lib/works"
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function HomePage() {
   const works = getWorks()
@@ -16,7 +16,6 @@ export default function HomePage() {
             Welcome to my creative writing collection. This site hosts various works of fiction that I've written over
             time. Feel free to explore the different stories and chapters.
           </p>
-          <p>Browse through the available works below and start reading.</p>
         </div>
       </section>
 

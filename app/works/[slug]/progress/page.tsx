@@ -54,6 +54,10 @@ export default function ProgressPage({ params }: { params: { slug: string } }) {
     day: "numeric",
   })
 
+  // Get the first chapter order
+  const firstChapterOrder =
+    work.chapters && work.chapters.length > 0 ? work.chapters.sort((a, b) => a.order - b.order)[0].order : 1
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="mb-4">
@@ -68,11 +72,11 @@ export default function ProgressPage({ params }: { params: { slug: string } }) {
         <div className="border border-border rounded-lg p-6">
           <h2 className="text-xl font-semibold mb-4">Your Reading Progress</h2>
 
-          <p className="mb-4">You haven't started reading this work yet.</p>
+          <p className="mb-4">This feature is not yet implemented. Check back later for reading progress tracking.</p>
 
           <div className="flex flex-col gap-3">
             <Button asChild>
-              <Link href={`/works/${work.slug}/chapters/1/`}>Start Reading</Link>
+              <Link href={`/works/${work.slug}/chapters/${firstChapterOrder}/`}>Start Reading</Link>
             </Button>
           </div>
         </div>
