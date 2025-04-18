@@ -1,6 +1,12 @@
 import fs from "fs"
 import path from "path"
 
+export type Chapter = {
+  order: number
+  title: string
+  file: string
+}
+
 export type Work = {
   slug: string
   title: string
@@ -8,6 +14,7 @@ export type Work = {
   chapterCount: number
   lastUpdated?: string
   nextUpdate?: string
+  chapters: Chapter[]
 }
 
 // Function to get all works from the works directory
@@ -31,6 +38,7 @@ export function getWorks(): Work[] {
         chapterCount: meta.chapterCount,
         lastUpdated: meta.lastUpdated,
         nextUpdate: meta.nextUpdate,
+        chapters: meta.chapters || [],
       }
     })
   } catch (error) {
@@ -53,10 +61,51 @@ export function getWorkBySlug(slug: string): Work | undefined {
 // Function to get chapter content - reads the actual file during build time
 export function getChapterContent(slug: string, chapterNum: number): string {
   try {
-    const chapterPath = path.join(process.cwd(), "public/works", slug, "chapters", `${chapterNum}.html`)
+    const work = getWorkBySlug(slug)
+    if (!work || !work.chapters || work.chapters.length === 0) {
+      // Fallback to old method if chapters array is not available
+      const chapterPath = path.join(process.cwd(), "public/works", slug, "chapters", `${chapterNum}.html`)
+      return fs.readFileSync(chapterPath, "utf8")
+    }
+
+    // Find the chapter by order
+    const chapter = work.chapters.find((ch) => ch.order === chapterNum)
+    if (!chapter) {
+      throw new Error(`Chapter with order ${chapterNum} not found`)
+    }
+
+    const chapterPath = path.join(process.cwd(), "public/works", slug, "chapters", chapter.file)
     return fs.readFileSync(chapterPath, "utf8")
   } catch (error) {
     console.error(`Error reading chapter content for ${slug}, chapter ${chapterNum}:`, error)
     return "<p>Chapter content not found.</p>"
   }
+}
+
+// Function to get chapter by order number
+export function getChapterByOrder(work: Work, order: number): Chapter | undefined {
+  if (!work.chapters) return undefined
+  return work.chapters.find((chapter) => chapter.order === order)
+}
+
+// Function to get next chapter order
+export function getNextChapterOrder(work: Work, currentOrder: number): number | undefined {
+  if (!work.chapters) return currentOrder < work.chapterCount ? currentOrder + 1 : undefined
+
+  const sortedChapters = [...work.chapters].sort((a, b) => a.order - b.order)
+  const currentIndex = sortedChapters.findIndex((ch) => ch.order === currentOrder)
+
+  if (currentIndex === -1 || currentIndex === sortedChapters.length - 1) return undefined
+  return sortedChapters[currentIndex + 1].order
+}
+
+// Function to get previous chapter order
+export function getPrevChapterOrder(work: Work, currentOrder: number): number | undefined {
+  if (!work.chapters) return currentOrder > 1 ? currentOrder - 1 : undefined
+
+  const sortedChapters = [...work.chapters].sort((a, b) => a.order - b.order)
+  const currentIndex = sortedChapters.findIndex((ch) => ch.order === currentOrder)
+
+  if (currentIndex <= 0) return undefined
+  return sortedChapters[currentIndex - 1].order
 }

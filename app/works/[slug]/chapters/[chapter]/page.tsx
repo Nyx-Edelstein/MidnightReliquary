@@ -1,4 +1,11 @@
-import { getWorks, getWorkBySlug, getChapterContent } from "@/lib/works"
+import {
+  getWorks,
+  getWorkBySlug,
+  getChapterContent,
+  getChapterByOrder,
+  getNextChapterOrder,
+  getPrevChapterOrder,
+} from "@/lib/works"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -9,21 +16,36 @@ import { notFound } from "next/navigation"
 export async function generateStaticParams() {
   const works = getWorks()
 
-  return works.flatMap((work) =>
-    Array.from({ length: work.chapterCount }, (_, i) => ({
+  return works.flatMap((work) => {
+    if (work.chapters && work.chapters.length > 0) {
+      return work.chapters.map((chapter) => ({
+        slug: work.slug,
+        chapter: String(chapter.order),
+      }))
+    }
+
+    // Fallback for works without chapter metadata
+    return Array.from({ length: work.chapterCount }, (_, i) => ({
       slug: work.slug,
       chapter: String(i + 1),
-    })),
-  )
+    }))
+  })
 }
 
 export function generateMetadata({ params }: { params: { slug: string; chapter: string } }): Metadata {
   const slug = params.slug
-  const chapter = params.chapter
+  const chapterNum = Number.parseInt(params.chapter, 10)
   const work = getWorkBySlug(slug)
 
+  if (!work) {
+    return { title: "Chapter Not Found" }
+  }
+
+  const chapter = getChapterByOrder(work, chapterNum)
+  const title = chapter ? chapter.title : `Chapter ${chapterNum}`
+
   return {
-    title: work ? `${work.title} - Chapter ${chapter}` : "Chapter Not Found",
+    title: `${work.title} - ${title}`,
   }
 }
 
@@ -38,8 +60,14 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
   }
 
   const chapterContent = getChapterContent(slug, chapterNum)
-  const isFirstChapter = chapterNum === 1
-  const isLastChapter = chapterNum === work.chapterCount
+  const chapter = getChapterByOrder(work, chapterNum)
+  const chapterTitle = chapter ? chapter.title : `Chapter ${chapterNum}`
+
+  const prevChapterOrder = getPrevChapterOrder(work, chapterNum)
+  const nextChapterOrder = getNextChapterOrder(work, chapterNum)
+
+  const isFirstChapter = prevChapterOrder === undefined
+  const isLastChapter = nextChapterOrder === undefined
 
   const ChapterNavigation = () => (
     <div className="flex justify-center items-center py-4 gap-4">
@@ -60,13 +88,19 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
           asChild={!isFirstChapter}
           className="bg-zinc-800 text-white border-zinc-700 hover:bg-zinc-700 hover:text-white rounded-full px-3 min-w-[40px]"
         >
-          {isFirstChapter ? <span>←</span> : <Link href={`/works/${slug}/chapters/${chapterNum - 1}/`}>←</Link>}
+          {isFirstChapter ? <span>←</span> : <Link href={`/works/${slug}/chapters/${prevChapterOrder}/`}>←</Link>}
         </Button>
       </div>
 
       {/* Chapter dropdown */}
       <div className="mx-2">
-        <ChapterSelect currentChapter={chapterNum} totalChapters={work.chapterCount} workSlug={slug} />
+        {work.chapters && work.chapters.length > 0 ? (
+          <ChapterSelect currentChapter={chapterNum} chapters={work.chapters} workSlug={slug} />
+        ) : (
+          <div className="w-[110px] bg-zinc-800 text-white border-zinc-700 rounded-full px-3 py-1 text-center">
+            Chapter {chapterNum}
+          </div>
+        )}
       </div>
 
       <div className="flex gap-2">
@@ -77,7 +111,7 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
           asChild={!isLastChapter}
           className="bg-zinc-800 text-white border-zinc-700 hover:bg-zinc-700 hover:text-white rounded-full px-3 min-w-[40px]"
         >
-          {isLastChapter ? <span>→</span> : <Link href={`/works/${slug}/chapters/${chapterNum + 1}/`}>→</Link>}
+          {isLastChapter ? <span>→</span> : <Link href={`/works/${slug}/chapters/${nextChapterOrder}/`}>→</Link>}
         </Button>
 
         <Button
@@ -98,7 +132,7 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
       <h1 className="text-2xl font-bold mb-2 text-center">{work.title}</h1>
 
       {/* Chapter title and horizontal rule */}
-      <h2 className="text-xl text-center mb-2">Chapter {chapterNum}</h2>
+      <h2 className="text-xl text-center mb-2">{chapterTitle}</h2>
       <hr className="mb-6 border-t border-gray-300 dark:border-gray-700" />
 
       {/* Navigation buttons */}

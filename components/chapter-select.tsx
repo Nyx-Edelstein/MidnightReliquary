@@ -1,29 +1,33 @@
 "use client"
 import { useRouter } from "next/navigation"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import type { Chapter } from "@/lib/works"
 
 interface ChapterSelectProps {
   currentChapter: number
-  totalChapters: number
+  chapters: Chapter[]
   workSlug: string
 }
 
-export function ChapterSelect({ currentChapter, totalChapters, workSlug }: ChapterSelectProps) {
+export function ChapterSelect({ currentChapter, chapters, workSlug }: ChapterSelectProps) {
   const router = useRouter()
 
   const handleValueChange = (value: string) => {
     router.push(`/works/${workSlug}/chapters/${value}/`)
   }
 
+  // Sort chapters by order
+  const sortedChapters = [...chapters].sort((a, b) => a.order - b.order)
+
   return (
     <Select value={currentChapter.toString()} onValueChange={handleValueChange}>
-      <SelectTrigger className="w-[110px] h-8 bg-zinc-800 text-white border-zinc-700 rounded-full">
-        <SelectValue placeholder="Chapter" />
+      <SelectTrigger className="w-[180px] h-8 bg-zinc-800 text-white border-zinc-700 rounded-full">
+        <SelectValue placeholder="Select Chapter" />
       </SelectTrigger>
       <SelectContent>
-        {Array.from({ length: totalChapters }, (_, i) => i + 1).map((num) => (
-          <SelectItem key={num} value={num.toString()}>
-            Chapter {num}
+        {sortedChapters.map((chapter) => (
+          <SelectItem key={chapter.order} value={chapter.order.toString()}>
+            {chapter.title}
           </SelectItem>
         ))}
       </SelectContent>

@@ -3,5 +3,17 @@
   "description": "A science fiction epic spanning galaxies and civilizations.",
   "chapterCount": 2,
   "lastUpdated": "2025-04-10",
-  "nextUpdate": "2025-04-24"
+  "nextUpdate": "2025-04-24",
+  "chapters": [
+    {
+      "order": 1,
+      "title": "Chapter 1: The Anomaly",
+      "file": "1.html"
+    },
+    {
+      "order": 2,
+      "title": "Chapter 2: First Contact",
+      "file": "2.html"
+    }
+  ]
 }
