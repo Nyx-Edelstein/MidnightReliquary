@@ -17,6 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Add the progress tracking script */}
+        <script src="/js/progress-tracker.js" defer></script>
+      </head>
       <body className="min-h-screen bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <header className="border-b border-border">

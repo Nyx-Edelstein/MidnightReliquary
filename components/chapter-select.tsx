@@ -13,6 +13,15 @@ export function ChapterSelect({ currentChapter, chapters, workSlug }: ChapterSel
   const router = useRouter()
 
   const handleValueChange = (value: string) => {
+    // Save current progress before navigating
+    try {
+      localStorage.setItem(`reading-progress-${workSlug}`, currentChapter.toString())
+      console.log(`Saved progress for ${workSlug}: chapter ${currentChapter} (before navigation)`)
+    } catch (e) {
+      console.error("Failed to save reading progress:", e)
+    }
+
+    // Navigate to the selected chapter
     router.push(`/works/${workSlug}/chapters/${value}/`)
   }
 

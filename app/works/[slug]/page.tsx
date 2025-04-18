@@ -17,6 +17,10 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
     notFound()
   }
 
+  // Get the first chapter order
+  const firstChapterOrder =
+    work.chapters && work.chapters.length > 0 ? work.chapters.sort((a, b) => a.order - b.order)[0].order : 1
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="mb-4">
@@ -39,12 +43,15 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
           Table of Contents
         </Link>
 
-        <Link
-          href={`/works/${work.slug}/chapters/1/`}
+        <a
+          href="#"
           className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 py-2 rounded-md text-center"
+          data-start-reading
+          data-slug={work.slug}
+          data-first-chapter={firstChapterOrder}
         >
           Start Reading
-        </Link>
+        </a>
 
         <Link
           href={`/works/${work.slug}/progress/`}

@@ -69,6 +69,18 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
   const isFirstChapter = prevChapterOrder === undefined
   const isLastChapter = nextChapterOrder === undefined
 
+  // Script to save progress immediately when page loads
+  const saveProgressScript = `
+    document.addEventListener('DOMContentLoaded', function() {
+      try {
+        localStorage.setItem('reading-progress-${slug}', '${chapterNum}');
+        console.log('Saved progress for ${slug}: chapter ${chapterNum} (inline)');
+      } catch (e) {
+        console.error('Failed to save reading progress:', e);
+      }
+    });
+  `
+
   const ChapterNavigation = () => (
     <div className="flex justify-center items-center py-4 gap-4">
       <div className="flex gap-2">
@@ -127,7 +139,15 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
   )
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-3xl">
+    <div
+      className="container mx-auto px-4 py-8 max-w-3xl"
+      data-chapter-page
+      data-work-slug={slug}
+      data-chapter-order={chapterNum}
+    >
+      {/* Inline script to save progress immediately */}
+      <script dangerouslySetInnerHTML={{ __html: saveProgressScript }} />
+
       {/* Work title */}
       <h1 className="text-2xl font-bold mb-2 text-center">{work.title}</h1>
 
