@@ -10,7 +10,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  // Remove the experimental.appDir option as it's no longer needed in Next.js 15
+  // Add trailing slash to ensure proper static file paths
+  trailingSlash: true,
 }
 
 export default nextConfig

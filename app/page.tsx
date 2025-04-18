@@ -16,7 +16,7 @@ export default function HomePage() {
             Welcome to my creative writing collection. This site hosts various works of fiction that I've written over
             time. Feel free to explore the different stories and chapters.
           </p>
-          <p>Your reading progress is automatically saved, so you can always continue where you left off.</p>
+          <p>Browse through the available works below and start reading.</p>
         </div>
       </section>
 
@@ -38,7 +38,7 @@ export default function HomePage() {
                   <span className="text-sm text-gray-500 dark:text-gray-400">
                     {work.chapterCount} {work.chapterCount === 1 ? "chapter" : "chapters"}
                   </span>
-                  <Link href={`/works/${work.slug}`} className="flex items-center text-primary hover:underline">
+                  <Link href={`/works/${work.slug}/`} className="flex items-center text-primary hover:underline">
                     Read <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>

@@ -54,48 +54,10 @@ export default function ProgressPage({ params }: { params: { slug: string } }) {
     day: "numeric",
   })
 
-  // Client-side script to handle reading progress
-  const progressScript = `
-    (function() {
-      if (typeof window !== 'undefined') {
-        const progressElement = document.getElementById('reading-progress');
-        const continueElement = document.getElementById('continue-reading');
-        const nextElement = document.getElementById('next-chapter');
-        const startElement = document.getElementById('start-reading');
-        const noProgressElement = document.getElementById('no-progress');
-        
-        const progress = localStorage.getItem('reading-progress-${params.slug}');
-        
-        if (progress) {
-          const chapter = parseInt(progress, 10);
-          progressElement.textContent = 'You\\'ve read up to Chapter ' + chapter + ' of ${work.chapterCount}.';
-          continueElement.style.display = 'block';
-          continueElement.href = '/works/${params.slug}/chapters/' + chapter;
-          
-          if (chapter < ${work.chapterCount}) {
-            nextElement.style.display = 'block';
-            nextElement.href = '/works/${params.slug}/chapters/' + (chapter + 1);
-          } else {
-            nextElement.style.display = 'none';
-          }
-          
-          startElement.style.display = 'none';
-          noProgressElement.style.display = 'none';
-        } else {
-          progressElement.textContent = 'You haven\\'t started reading this work yet.';
-          continueElement.style.display = 'none';
-          nextElement.style.display = 'none';
-          startElement.style.display = 'block';
-          noProgressElement.style.display = 'block';
-        }
-      }
-    })();
-  `
-
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="mb-4">
-        <Link href={`/works/${work.slug}`} className="text-primary hover:underline">
+        <Link href={`/works/${work.slug}/`} className="text-primary hover:underline">
           ← Back to {work.title}
         </Link>
       </div>
@@ -106,25 +68,11 @@ export default function ProgressPage({ params }: { params: { slug: string } }) {
         <div className="border border-border rounded-lg p-6">
           <h2 className="text-xl font-semibold mb-4">Your Reading Progress</h2>
 
-          <p id="reading-progress" className="mb-4">
-            Loading your progress...
-          </p>
+          <p className="mb-4">You haven't started reading this work yet.</p>
 
           <div className="flex flex-col gap-3">
-            <Button id="continue-reading" asChild style={{ display: "none" }}>
-              <Link href={`#`}>Continue Reading</Link>
-            </Button>
-
-            <Button id="next-chapter" variant="outline" asChild style={{ display: "none" }}>
-              <Link href={`#`}>Next Chapter</Link>
-            </Button>
-
-            <div id="no-progress" style={{ display: "none" }}>
-              <p className="mb-4">You haven't started reading this work yet.</p>
-            </div>
-
-            <Button id="start-reading" asChild style={{ display: "none" }}>
-              <Link href={`/works/${work.slug}/chapters/1`}>Start Reading</Link>
+            <Button asChild>
+              <Link href={`/works/${work.slug}/chapters/1/`}>Start Reading</Link>
             </Button>
           </div>
         </div>
@@ -158,9 +106,6 @@ export default function ProgressPage({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
-
-      {/* Script to handle reading progress */}
-      <script dangerouslySetInnerHTML={{ __html: progressScript }} />
     </div>
   )
 }

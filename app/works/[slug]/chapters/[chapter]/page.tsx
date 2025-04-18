@@ -2,6 +2,7 @@ import { getWorks, getWorkBySlug, getChapterContent } from "@/lib/works"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { ChapterSelect } from "@/components/chapter-select"
 import { notFound } from "next/navigation"
 
 // Generate static params for all chapters of all works
@@ -40,15 +41,6 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
   const isFirstChapter = chapterNum === 1
   const isLastChapter = chapterNum === work.chapterCount
 
-  // Client-side script to save reading progress
-  const saveProgressScript = `
-    (function() {
-      if (typeof window !== 'undefined') {
-        localStorage.setItem('reading-progress-${slug}', '${chapterNum}');
-      }
-    })();
-  `
-
   const ChapterNavigation = () => (
     <div className="flex justify-center items-center py-4 gap-4">
       <div className="flex gap-2">
@@ -58,7 +50,7 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
           asChild
           className="bg-zinc-800 text-white border-zinc-700 hover:bg-zinc-700 hover:text-white rounded-full px-4"
         >
-          <Link href={`/works/${slug}`}>← Start</Link>
+          <Link href={`/works/${slug}/`}>← Start</Link>
         </Button>
 
         <Button
@@ -68,15 +60,13 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
           asChild={!isFirstChapter}
           className="bg-zinc-800 text-white border-zinc-700 hover:bg-zinc-700 hover:text-white rounded-full px-3 min-w-[40px]"
         >
-          {isFirstChapter ? <span>←</span> : <Link href={`/works/${slug}/chapters/${chapterNum - 1}`}>←</Link>}
+          {isFirstChapter ? <span>←</span> : <Link href={`/works/${slug}/chapters/${chapterNum - 1}/`}>←</Link>}
         </Button>
       </div>
 
-      {/* Chapter dropdown - will be enhanced with client JS */}
+      {/* Chapter dropdown */}
       <div className="mx-2">
-        <div className="w-[110px] bg-zinc-800 text-white border-zinc-700 rounded-full px-3 py-1 text-center">
-          Chapter {chapterNum}
-        </div>
+        <ChapterSelect currentChapter={chapterNum} totalChapters={work.chapterCount} workSlug={slug} />
       </div>
 
       <div className="flex gap-2">
@@ -87,7 +77,7 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
           asChild={!isLastChapter}
           className="bg-zinc-800 text-white border-zinc-700 hover:bg-zinc-700 hover:text-white rounded-full px-3 min-w-[40px]"
         >
-          {isLastChapter ? <span>→</span> : <Link href={`/works/${slug}/chapters/${chapterNum + 1}`}>→</Link>}
+          {isLastChapter ? <span>→</span> : <Link href={`/works/${slug}/chapters/${chapterNum + 1}/`}>→</Link>}
         </Button>
 
         <Button
@@ -96,7 +86,7 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
           asChild
           className="bg-zinc-800 text-white border-zinc-700 hover:bg-zinc-700 hover:text-white rounded-full px-4"
         >
-          <Link href={`/works/${slug}/progress`}>End →</Link>
+          <Link href={`/works/${slug}/progress/`}>End →</Link>
         </Button>
       </div>
     </div>
@@ -120,9 +110,6 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
       </div>
 
       <ChapterNavigation />
-
-      {/* Script to save reading progress */}
-      <script dangerouslySetInnerHTML={{ __html: saveProgressScript }} />
     </div>
   )
 }

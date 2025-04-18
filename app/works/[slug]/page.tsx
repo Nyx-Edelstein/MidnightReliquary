@@ -33,21 +33,21 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
 
       <div className="flex flex-col sm:flex-row gap-4 mb-12">
         <Link
-          href={`/works/${work.slug}/chapters`}
+          href={`/works/${work.slug}/chapters/`}
           className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 py-2 rounded-md text-center"
         >
           Table of Contents
         </Link>
 
         <Link
-          href={`/works/${work.slug}/chapters/1`}
+          href={`/works/${work.slug}/chapters/1/`}
           className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 py-2 rounded-md text-center"
         >
           Start Reading
         </Link>
 
         <Link
-          href={`/works/${work.slug}/progress`}
+          href={`/works/${work.slug}/progress/`}
           className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 py-2 rounded-md text-center"
         >
           Current Progress
