@@ -1,4 +1,5 @@
 import { getWorks } from "@/lib/works"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 export default function HomePage() {
@@ -15,7 +16,7 @@ export default function HomePage() {
             Welcome to my creative writing collection. This site hosts various works of fiction that I've written over
             time. Feel free to explore the different stories and chapters.
           </p>
-          <p>Your reading progress is automatically saved, so you can always continue where you left off.</p>
+          <p>Browse through the available works below and start reading.</p>
         </div>
       </section>
 
@@ -37,14 +38,9 @@ export default function HomePage() {
                   <span className="text-sm text-gray-500 dark:text-gray-400">
                     {work.chapterCount} {work.chapterCount === 1 ? "chapter" : "chapters"}
                   </span>
-                  <a
-                    href="#"
-                    className="flex items-center text-primary hover:underline"
-                    data-read-link
-                    data-slug={work.slug}
-                  >
+                  <Link href={`/works/${work.slug}/`} className="flex items-center text-primary hover:underline">
                     Read <ArrowRight className="ml-1 h-4 w-4" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
