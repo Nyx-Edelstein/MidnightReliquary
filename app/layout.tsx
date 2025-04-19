@@ -22,8 +22,8 @@ export default function RootLayout({
           <header className="border-b border-border">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
               <a href="/" className="text-xl font-semibold hover:text-primary transition-colors flex items-center">
-                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md mr-2">CW</span>
-                Creative Writing
+                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md mr-2">MR</span>
+                Midnight Reliquary
               </a>
               <ThemeToggle />
             </div>
@@ -31,7 +31,7 @@ export default function RootLayout({
           <main>{children}</main>
           <footer className="border-t border-border mt-12 py-6">
             <div className="container mx-auto px-4 text-center text-sm text-gray-500 dark:text-gray-400">
-              © {new Date().getFullYear()} Creative Writing Collection
+              © {new Date().getFullYear()} Nyx Edelstein
             </div>
           </footer>
         </ThemeProvider>

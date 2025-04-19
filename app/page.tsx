@@ -6,14 +6,13 @@ export default function HomePage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-8">Creative Writing Collection</h1>
+      <h1 className="text-3xl font-bold mb-8">Midnight Reliquary</h1>
 
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">About This Site</h2>
         <div className="prose dark:prose-invert">
           <p>
-            Welcome to my creative writing collection. This site hosts various works of fiction that I've written over
-            time. Feel free to explore the different stories and chapters.
+            Welcome to my creative writing collection, where logic meets imagination.
           </p>
         </div>
       </section>
