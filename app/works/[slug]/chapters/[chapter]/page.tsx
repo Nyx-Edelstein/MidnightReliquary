@@ -26,11 +26,7 @@ export async function generateStaticParams() {
       }))
     }
 
-    // Fallback for works without chapter metadata
-    return Array.from({ length: work.chapterCount }, (_, i) => ({
-      slug: work.slug,
-      chapter: String(i + 1),
-    }))
+    return []
   })
 }
 
@@ -63,7 +59,13 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
 
   const chapterContent = getChapterContent(slug, chapterNum)
   const chapter = getChapterByOrder(work, chapterNum)
-  const chapterTitle = chapter ? chapter.title : `Chapter ${chapterNum}`
+
+  if (!chapter) {
+    notFound()
+  }
+
+  const chapterTitle = chapter.title
+  const wordCount = chapter.wordCount
 
   const prevChapterOrder = getPrevChapterOrder(work, chapterNum)
   const nextChapterOrder = getNextChapterOrder(work, chapterNum)
@@ -138,6 +140,10 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
 
       {/* Chapter title and horizontal rule */}
       <h2 className="text-xl text-center mb-2">{chapterTitle}</h2>
+
+      {/* Word count */}
+      {wordCount && <p className="text-center text-sm text-gray-500 dark:text-gray-400 mb-2">~{wordCount} words</p>}
+
       <hr className="mb-6 border-t border-gray-300 dark:border-gray-700" />
 
       {/* Navigation buttons */}

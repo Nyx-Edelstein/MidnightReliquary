@@ -37,6 +37,10 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
 
       <div className="prose dark:prose-invert mb-8">
         <p>{work.description}</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">
+          {work.chapterCount} {work.chapterCount === 1 ? "chapter" : "chapters"}
+          {work.totalWordCount ? ` • ~${work.totalWordCount} words` : ""}
+        </p>
       </div>
 
       {/* Reading Progress Widget */}
