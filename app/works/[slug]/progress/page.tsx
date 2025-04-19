@@ -1,7 +1,6 @@
 import { getWorks, getWorkBySlug } from "@/lib/works"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Calendar } from "lucide-react"
 import { notFound } from "next/navigation"
 
@@ -54,10 +53,6 @@ export default function ProgressPage({ params }: { params: { slug: string } }) {
     day: "numeric",
   })
 
-  // Get the first chapter order
-  const firstChapterOrder =
-    work.chapters && work.chapters.length > 0 ? work.chapters.sort((a, b) => a.order - b.order)[0].order : 1
-
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="mb-4">
@@ -66,47 +61,33 @@ export default function ProgressPage({ params }: { params: { slug: string } }) {
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold mb-8">Current Progress</h1>
+      <h1 className="text-3xl font-bold mb-8">Publication Status</h1>
 
-      <div className="grid gap-8 md:grid-cols-2">
-        <div className="border border-border rounded-lg p-6">
-          <h2 className="text-xl font-semibold mb-4">Your Reading Progress</h2>
+      <div className="border border-border rounded-lg p-6">
+        <h2 className="text-xl font-semibold mb-4">Publication Schedule</h2>
 
-          <p className="mb-4">This feature is not yet implemented. Check back later for reading progress tracking.</p>
-
-          <div className="flex flex-col gap-3">
-            <Button asChild>
-              <Link href={`/works/${work.slug}/chapters/${firstChapterOrder}/`}>Start Reading</Link>
-            </Button>
+        <div className="space-y-4">
+          <div className="flex items-start gap-3">
+            <Calendar className="h-5 w-5 mt-0.5 text-gray-500" />
+            <div>
+              <p className="font-medium">Last Updated</p>
+              <p className="text-gray-500 dark:text-gray-400">{lastUpdated}</p>
+            </div>
           </div>
-        </div>
 
-        <div className="border border-border rounded-lg p-6">
-          <h2 className="text-xl font-semibold mb-4">Publication Status</h2>
-
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <Calendar className="h-5 w-5 mt-0.5 text-gray-500" />
-              <div>
-                <p className="font-medium">Last Updated</p>
-                <p className="text-gray-500 dark:text-gray-400">{lastUpdated}</p>
-              </div>
+          <div className="flex items-start gap-3">
+            <Calendar className="h-5 w-5 mt-0.5 text-gray-500" />
+            <div>
+              <p className="font-medium">Next Update Expected</p>
+              <p className="text-gray-500 dark:text-gray-400">{nextUpdateFormatted}</p>
             </div>
+          </div>
 
-            <div className="flex items-start gap-3">
-              <Calendar className="h-5 w-5 mt-0.5 text-gray-500" />
-              <div>
-                <p className="font-medium">Next Update Expected</p>
-                <p className="text-gray-500 dark:text-gray-400">{nextUpdateFormatted}</p>
-              </div>
-            </div>
-
-            <div className="mt-4 pt-4 border-t border-border">
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                This work is currently {work.chapterCount < 10 ? "in progress" : "complete"}.
-                {work.chapterCount < 10 && " New chapters are published every two weeks."}
-              </p>
-            </div>
+          <div className="mt-4 pt-4 border-t border-border">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              This work is currently {work.chapterCount < 10 ? "in progress" : "complete"}.
+              {work.chapterCount < 10 && " New chapters are published every two weeks."}
+            </p>
           </div>
         </div>
       </div>
