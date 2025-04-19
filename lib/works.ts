@@ -13,7 +13,6 @@ export type Work = {
   description: string
   chapterCount: number
   lastUpdated?: string
-  nextUpdate?: string
   chapters: Chapter[]
 }
 
@@ -37,7 +36,6 @@ export function getWorks(): Work[] {
         description: meta.description,
         chapterCount: meta.chapterCount,
         lastUpdated: meta.lastUpdated,
-        nextUpdate: meta.nextUpdate,
         chapters: meta.chapters || [],
       }
     })
@@ -79,6 +77,34 @@ export function getChapterContent(slug: string, chapterNum: number): string {
   } catch (error) {
     console.error(`Error reading chapter content for ${slug}, chapter ${chapterNum}:`, error)
     return "<p>Chapter content not found.</p>"
+  }
+}
+
+// Function to get title blurb content
+export function getTitleBlurbContent(slug: string): string {
+  try {
+    const blurbPath = path.join(process.cwd(), "public/works", slug, "title-blurb.html")
+    if (fs.existsSync(blurbPath)) {
+      return fs.readFileSync(blurbPath, "utf8")
+    }
+    return "" // Return empty string if file doesn't exist
+  } catch (error) {
+    console.error(`Error reading title blurb for ${slug}:`, error)
+    return ""
+  }
+}
+
+// Function to get update info content
+export function getUpdateInfoContent(slug: string): string {
+  try {
+    const updateInfoPath = path.join(process.cwd(), "public/works", slug, "update-info.html")
+    if (fs.existsSync(updateInfoPath)) {
+      return fs.readFileSync(updateInfoPath, "utf8")
+    }
+    return "<p>No update information available.</p>" // Default message if file doesn't exist
+  } catch (error) {
+    console.error(`Error reading update info for ${slug}:`, error)
+    return "<p>No update information available.</p>"
   }
 }
 

@@ -1,4 +1,4 @@
-import { getWorkBySlug, getWorks } from "@/lib/works"
+import { getWorkBySlug, getWorks, getTitleBlurbContent } from "@/lib/works"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ReadingProgressWidget } from "@/components/reading-progress-widget"
@@ -22,6 +22,9 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
   const firstChapterOrder =
     work.chapters && work.chapters.length > 0 ? work.chapters.sort((a, b) => a.order - b.order)[0].order : 1
 
+  // Get title blurb content
+  const titleBlurbContent = getTitleBlurbContent(params.slug)
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <div className="mb-4">
@@ -44,6 +47,13 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
         firstChapterOrder={firstChapterOrder}
         chapters={work.chapters || []}
       />
+
+      {/* Title Blurb */}
+      {titleBlurbContent && (
+        <div className="prose dark:prose-invert mb-8">
+          <div dangerouslySetInnerHTML={{ __html: titleBlurbContent }} />
+        </div>
+      )}
     </div>
   )
 }
