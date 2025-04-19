@@ -11,6 +11,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChapterSelect } from "@/components/chapter-select"
 import { ChapterProgressTracker } from "@/components/chapter-progress-tracker"
+import { ChapterContentRenderer } from "@/components/chapter-content-renderer"
 import { notFound } from "next/navigation"
 
 // Generate static params for all chapters of all works
@@ -142,9 +143,9 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
       {/* Navigation buttons */}
       <ChapterNavigation />
 
-      {/* Chapter content */}
-      <div className="my-8 prose dark:prose-invert max-w-none">
-        <div dangerouslySetInnerHTML={{ __html: chapterContent }} />
+      {/* Chapter content with script execution */}
+      <div className="my-8">
+        <ChapterContentRenderer content={chapterContent} />
       </div>
 
       <ChapterNavigation />

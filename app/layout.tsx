@@ -7,6 +7,10 @@ import { ThemeToggle } from "@/components/theme-toggle"
 export const metadata: Metadata = {
   title: "Creative Writing Collection",
   description: "A collection of creative writing works",
+  // Add script preconnect for jQuery to improve loading performance
+  icons: {
+    icon: "/favicon.ico",
+  },
     generator: 'v0.dev'
 }
 
@@ -17,6 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Add preconnect for jQuery CDN to improve loading performance */}
+        <link rel="preconnect" href="https://code.jquery.com" />
+      </head>
       <body className="min-h-screen bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <header className="border-b border-border">
