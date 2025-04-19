@@ -10,6 +10,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChapterSelect } from "@/components/chapter-select"
+import { ChapterProgressTracker } from "@/components/chapter-progress-tracker"
 import { notFound } from "next/navigation"
 
 // Generate static params for all chapters of all works
@@ -128,6 +129,9 @@ export default function ChapterPage({ params }: { params: { slug: string; chapte
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-3xl">
+      {/* Progress tracker component */}
+      <ChapterProgressTracker workSlug={slug} chapterNumber={chapterNum} />
+
       {/* Work title */}
       <h1 className="text-2xl font-bold mb-2 text-center">{work.title}</h1>
 
