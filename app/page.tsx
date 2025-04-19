@@ -1,6 +1,5 @@
 import { getWorks } from "@/lib/works"
-import { ArrowRight } from "lucide-react"
-import Link from "next/link"
+import { ReadButton } from "@/components/read-button"
 
 export default function HomePage() {
   const works = getWorks()
@@ -37,9 +36,7 @@ export default function HomePage() {
                   <span className="text-sm text-gray-500 dark:text-gray-400">
                     {work.chapterCount} {work.chapterCount === 1 ? "chapter" : "chapters"}
                   </span>
-                  <Link href={`/works/${work.slug}/`} className="flex items-center text-primary hover:underline">
-                    Read <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
+                  <ReadButton workSlug={work.slug} />
                 </div>
               </div>
             ))}
