@@ -1,0 +1,14 @@
+{
+  "title": "Virtual Kombat",
+  "description": "A short-story entry for a writing challenge. The original writing prompt is copied below.",
+  "chapterCount": 1,
+  "lastUpdated": "2025-04-20",
+
+  "chapters": [
+    {
+      "order": 1,
+      "title": "A Short Story",
+      "file": "VirtualKombat.html"
+    }
+  ]
+}

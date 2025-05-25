@@ -78,7 +78,7 @@ export function ReadingProgressWidget({
       {progress ? (
         <>
           <p className="mb-4">
-            You last read {getChapterTitle(progress)} ({progress} of {chapterCount} chapters).
+            You last read "{getChapterTitle(progress)}"
           </p>
           <div className="flex flex-wrap gap-3">
             <Button asChild>
