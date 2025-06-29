@@ -1,0 +1,99 @@
+{
+	// Place your MidnightReliquary workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Double Curly Quotes":
+	{
+		"scope": "html",
+		"prefix": "quot",
+		"body":
+		[
+			"“$1”",
+		],
+	},
+	"Single Curly Quotes":
+	{
+		"scope": "html",
+		"prefix": "squot",
+		"body":
+		[
+			"‘$1’",
+		],
+	},
+	"Curly Apostrophe":
+	{
+		"scope": "html",
+		"prefix": "apo",
+		"body":
+		[
+			"$1’$2",
+		],
+	},
+	"Emdash":
+	{
+		"scope": "html",
+		"prefix": "emd",
+		"body":
+		[
+			"—",
+		],
+	},
+	"Ellipsis":
+	{
+		"scope": "html",
+		"prefix": "elip",
+		"body":
+		[
+			"…",
+		],
+	},
+	"Italics":
+	{
+		"scope": "html",
+		"prefix": "it",
+		"body":
+		[
+			"<i>$1</i>",
+		],
+	},
+	"Span":
+	{
+		"scope": "html",
+		"prefix": "sp",
+		"body":
+		[
+			"<span>\r\n$1\r\n</span>\r\n",
+		],
+	},
+	"Break":
+	{
+		"scope": "html",
+		"prefix": "br",
+		"body":
+		[
+			"<br><br>\r\n",
+		],
+	},
+	"Scene Break":
+	{
+		"scope": "html",
+		"prefix": "sbr",
+		"body":
+		[
+			"<div style=\"display:flex;justify-content:center;align-items:center;\">$1</div>\r\n<br>\r\n<span>$2</span>",
+		],
+	},
+}

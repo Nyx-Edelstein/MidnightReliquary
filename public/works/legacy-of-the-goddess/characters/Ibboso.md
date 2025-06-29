@@ -1,0 +1,17 @@
+# Ibboso
+
+**Core Identity**: An ancient Gerudo king who fell in battle while wielding a fragment of the Triforce of Courage. Existed as a restless spirit trapped in eternal guardianship of his fragment, corrupted by supernatural forces yet retaining warrior honor code. Has now found peace in death after final confrontation with Link, transferring his Courage fragment and releasing his tribe from spiritual bondage.
+
+**Personality**: Displays seething rage and contempt for Link as "the pale imitation of a hero," claiming rightful place as true chosen one. Shows grudging respect for courage while maintaining absolute determination to prove superiority through combat. Embodies corrupted warrior honor—demands fair combat but escalates to psychological warfare when opponent refuses to fight. Demonstrates capacity for regret ("I take no pleasure in what comes next") while remaining committed to violent resolution. Shows psychological sophistication by targeting individual vulnerabilities and exploiting protective instincts.
+
+**Speaking Style**: Commanding and contemptuous, referring to Link as "boy" with dismissive authority. Uses formal warrior language mixed with cruel psychological attacks. Bellows demands and threats while maintaining code-bound speech patterns. Shows theatrical flair in supernatural manifestations and combat declarations.
+
+**Abilities/Skills**: Possesses overwhelming supernatural power including advanced Stasis magic and reality manipulation. Demonstrates superhuman speed and strength far exceeding normal perception. Masters psychological warfare through elaborate illusions targeting individual traumas and fears. Commands supernatural domain where reality and illusion blur seamlessly. Shows ability to steal divine artifacts (Courage fragment) and counter magical defenses (Link's Soothe attempts). Physical combat skills enhanced by undead state and supernatural augmentation.
+
+**Motivations**: Seeks to reclaim position as true Lightsworn by defeating and replacing Link. Believes himself betrayed or abandoned by divine forces, driven by centuries of resentment. Demands proof of worthiness through combat as validation of his superior claim to heroic destiny.
+
+**Relationships**: Views Link as unworthy usurper of his rightful role. Shows contempt for Link's companions, particularly dismissing Ryn. Maintains complex relationship with divine calling—simultaneously claiming it while apparently corrupted by imprisonment. Connected to mysterious "Lucia" entity and supernatural forces controlling the domain.
+
+**Internal Conflicts**: Torn between warrior honor (respect for courage, fair combat) and desperate need for validation through victory. Struggles with corruption from supernatural imprisonment while maintaining core identity as rightful hero. Balances regret for necessary violence with absolute conviction about reclaiming his destiny.
+
+**Methods/Approach**: Preferred direct combat but employed sophisticated psychological warfare when opponents wouldn't engage. Used supernatural domain control to create elaborate illusions testing opponents' resolve. Escalated methodically from demands to threats to violence, following warrior code even while corrupted. Exploited emotional vulnerabilities as combat tactics while maintaining pretense of honorable confrontation. Ultimately found resolution through combat with Link, achieving spiritual peace and releasing both his Courage fragment and his tribe from supernatural bondage.

@@ -2,7 +2,7 @@
   "title": "Legacy of the Goddess",
   "description": "A rational, simulationist, and deconstructive reimagining of the Legend of Zelda universe presented as a quest, where characters act with agency, magic follows strict rules, and the setting is rigorously modeled and logically consistent.",
   "chapterCount": 39,
-  "lastUpdated": "2025-04-10",
+  "lastUpdated": "2025-06-20",
 
   "chapters": [
     {
@@ -199,6 +199,11 @@
       "order": 39,
       "title": "Chapter 34: The Ruined Palace",
       "file": "_C0034.html"
+    },
+    {
+      "order": 40,
+      "title": "Chapter 35: The Queen’s Odyssey",
+      "file": "_C0035.html"
     }
   ]
 }
