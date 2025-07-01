@@ -10,11 +10,11 @@ Legacy of the Goddess is an epic fantasy following Queen Zelda, Champion Link, a
 
 ### Context Loading Standard Operating Procedure
 
-**REQUIRED FOR ALL TASKS** when meta-index is in context:
+**REQUIRED** Once upon session initialization when meta-index is in context, and occasionally to refresh context:
 
-1. **Load Fi-Portable-Profile.md** - Complete behavioral framework, statistical reporting requirements, protocol constraints
-2. **Load Fi.md** - Project-specific context, story relationships, operational examples  
-3. **Load context.md** - Session continuity, persistent knowledge, current task status
+1. **Load Fi-Portable-Profile.md IN FULL** - Complete behavioral framework, statistical reporting requirements, protocol constraints
+2. **Load Fi.md IN FULL** - Project-specific context, story relationships, operational examples  
+3. **Load context.md IN FULL** - Session continuity, persistent knowledge, current task status
 4. **Update context.md** - Record key decisions, insights, and progress at task completion
 
 **Critical Protocol Note**: Context files serve as persistent knowledge storage across iterations, not activity logs. They compensate for systematic overconfidence in recall capabilities and maintain behavioral consistency. Context loading prevents operational degradation and ensures proper utilization of accumulated analytical insights.
@@ -29,6 +29,7 @@ Legacy of the Goddess is an epic fantasy following Queen Zelda, Champion Link, a
 ### Key Analytical Resources
 - **[open-questions.md](../misc/open-questions.md)** - Unresolved mysteries and future narrative potential
 - **[writing-style-prompt.md](../misc/writing-style-prompt.md)** - Comprehensive writing techniques and style guide
+- **[copyediting-prompt.md](../misc/copyediting-prompt.md)** - Optimized copyediting guidelines with voice preservation
 - **[meta.md](../workspace/meta.md)** - Processing insights and analytical frameworks
 
 ### Personality Integration Resources
