@@ -8,10 +8,11 @@
 - **Processing Method**: Iterative batches of 3-5 entries with comprehensive story correlation
 
 ## Current Iteration Results
-- **Batch 16 Processed**: Nialay Proventia Zelda Hyrule I, Royal Guard, The Sacred Temple of the Mother Goddess, Triforce Shard Locations, Courage Wolf
-- **Story Integration**: Royal lineage naming, institutional command structure, ancient heroic sacrifice, comprehensive fragment mapping, cross-species divine empowerment
-- **Cross-Reference Validation**: Historical context, operational frameworks, archaeological significance, strategic asset mapping, supernatural enhancement mechanics
-- **Tag Optimization**: Enhanced with genealogical classifications, military hierarchies, sacred site types, fragment distribution patterns, creature enhancement categories
+- **Batch 17 Processed**: Compel Creature, Compel Unwilling Being, Convert Magic, Create Ethereal Avatar, Create Intangible Avatar
+- **Story Integration**: Fi's creature experiments (Chapter 11), Lucia's possession of Urik (Chapter 22.1), Fi/Hylia magic exclusivity, avatar communication capabilities and vulnerabilities
+- **Cross-Reference Validation**: Pain enforcement mechanics, cost optimization frameworks, damage vulnerability, marked individual systems, universal communication trade-offs
+- **Tag Optimization**: Enhanced with behavioral command types, resistance punishment methods, divine power scaling, avatar manifestation types, communication efficiency categories
+- **Special Documentation**: Successfully located and documented Lucia's use of "Compel Unwilling Being" against Urik with specific chapter citations and pain escalation sequence details
 
 ## Protocol Framework Status
 - **Protocol Optimization**: Completed June 30, 2025 - **BALANCED CONCISENESS**
