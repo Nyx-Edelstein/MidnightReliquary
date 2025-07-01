@@ -1,0 +1,5 @@
+# Files Processed - Ready for Movement
+# This file tracks worldbuilding entries completed in current iteration
+# Format: filename.md (one per line, no path prefix)
+# Script will move from data-parsed/ to data/ and clear this list
+
