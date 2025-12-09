@@ -1,3 +1,3 @@
 # MidnightReliquary
  
-This website was (mostly) vibe coded using https://v0.dev/
+This website was (almost entirely) vibe coded using AI programming assistants
