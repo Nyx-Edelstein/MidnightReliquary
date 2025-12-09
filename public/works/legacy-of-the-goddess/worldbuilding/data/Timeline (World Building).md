@@ -94,7 +94,7 @@ Believing Hylia to have forsaken them, the [[Gerudo]] faction is formed, worship
 ## The Gerudo Civil War
 
 **8095 AC | 414 FE:**
-Amidst growing tensions and rumors of blasphemous practices, King [[Domhall Gavrillius Hyrule II]], at the behest of the [[Shiekah]], gathers an army to expel the Gerudo from Hyrule. The Gerudo, guided by Morudo Geira, are prepared for this, and enact a coup against the Royal family. They succeed in taking the King's life, as well as that of his wife and two daughters.
+Amidst growing tensions and rumors of blasphemous practices, King [[Domhall Gavrillius Hyrule II]], at the behest of the [[Sheikah]], gathers an army to expel the Gerudo from Hyrule. The Gerudo, guided by Morudo Geira, are prepared for this, and enact a coup against the Royal family. They succeed in taking the King's life, as well as that of his wife and two daughters.
 
 **8095 - 8107 AC | 414 - 426 FE:**
 Twelve years of bloody civil war rages, as the Gerudo attempt to seize control and quell dissent. The king's nephew and only surviving heir, [[Basilius Rhomar Hyrule]], takes up the crown and command of the armies to avenge his uncle and oust the usurpers.

@@ -59,7 +59,7 @@ Seff operates as Castletown's Court Minstrel while concealing his true nature as
 
 ### Misc
 * Is actually a world-hopper, and has intimate knowledge of things going on behind the scenes. As the Court Minstrel, he has placed himself in a position to gather information in the realm and make subtle moves to affect events. Still, he stays shy of any personal involvements.
-* [[King Hyrule]] and the [[Sheikah]] are well aware that he is not from this world; however, he doesn't appear to be malicious. In fact, he has at times offered up crucial information that has helped the kingdom. It was determined that the best way to handle him was to keep a close eye on him at all times, thus his retainment at court. Wherever he goes, a Shiekah agent is always close by.
+* [[King Hyrule]] and the [[Sheikah]] are well aware that he is not from this world; however, he doesn't appear to be malicious. In fact, he has at times offered up crucial information that has helped the kingdom. It was determined that the best way to handle him was to keep a close eye on him at all times, thus his retainment at court. Wherever he goes, a Sheikah agent is always close by.
 * Often makes cryptic comments or gives advice that only makes sense to the players.
 
 ---

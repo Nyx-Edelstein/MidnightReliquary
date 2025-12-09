@@ -47,7 +47,7 @@
 ## Description
 Impa is the Sheikah bodyguard appointed to watch over Princess Zelda since birth. Impa came into the position when she was twelve years old. She has a strongly familiar relationship with Zelda, often taking the role of an older sister or mother with her charge.
 
-Trained from birth in the Shiekah arts, she commands a wide swath of skills and magics. Her abilities include threat assessment, assassination, body guarding, hand to hand combat, ranged combat, and espionage. She is marked by her devotion to her duty, and to Hyrule and its people.
+Trained from birth in the Sheikah arts, she commands a wide swath of skills and magics. Her abilities include threat assessment, assassination, body guarding, hand to hand combat, ranged combat, and espionage. She is marked by her devotion to her duty, and to Hyrule and its people.
 
 ## QM Data
 *[No additional QM data specified]*

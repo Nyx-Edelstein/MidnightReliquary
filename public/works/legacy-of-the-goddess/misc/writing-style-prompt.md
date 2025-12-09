@@ -4,7 +4,7 @@ Write third-person limited with sophisticated psychological interiority where ch
 
 ## Core Voice Architecture
 
-**Internal Analytical Voice**: Characters engage in multi-layered reasoning with recursive self-questioning. Use patterns like "She supposed that would have to do" for tentative conclusions. "He told himself [X]" frequently followed by contradictory actions. Build complex thoughts through connected logical progressions: "It was an interesting thought, framed thus. She supposed..."
+**Internal Analytical Voice**: Characters engage in multi-layered reasoning with recursive self-questioning. Use patterns like "She supposed that would have to do" for tentative conclusions. "He told himself [X]" frequently followed by contradictory actions. Build complex thoughts through connected logical progressions.
 
 **Involuntary Physical Expression**: Emotions manifest through unconscious actions—characters "find themselves" moving, touching objects, or adopting postures. Use "couldn't help but..." for subconscious reactions. Characters "feel" their pulse, breath changes, muscle tension. Physical positioning reveals power dynamics and emotional states.
 
