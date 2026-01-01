@@ -1,224 +1,239 @@
 {
   "title": "Legacy of the Goddess",
-  "description": "A rational, simulationist, and deconstructive reimagining of the Legend of Zelda universe presented as a quest, where characters act with agency, magic follows strict rules, and the setting is rigorously modeled and logically consistent.",
-  "chapterCount": 39,
-  "lastUpdated": "2025-06-20",
+  "description": "A rational, simulationist, and deconstructive reimagining of a classic adventure setting, explored as a quest, where characters act with agency, magic follows strict rules, and the setting is rigorously modeled and logically consistent.",
+  "chapterCount": 46,
+  "lastUpdated": "2026-01-01",
 
   "chapters": [
     {
       "order": 1,
-      "title": "Prologue (1/2)",
-      "file": "_A1.html"
+      "title": "Chapter 1: A Blight Upon the Realm",
+      "file": "chapter_010__a-blight-upon-the-realm.html"
     },
     {
       "order": 2,
-      "title": "Prologue (2/2)",
-      "file": "_A2.html"
+      "title": "Prologue: Birthrights and Burdens",
+      "file": "chapter_020__prologue-birthrights-and-burdens.html"
     },
     {
       "order": 3,
-      "title": "Chapter 1: A Blight Upon the Realm",
-      "file": "_C0001.html"
+      "title": "Prologue: The Call of Destiny",
+      "file": "chapter_030__prologue-the-call-of-destiny.html"
     },
     {
       "order": 4,
       "title": "Chapter 2: Reversal of Fate",
-      "file": "_C0002.html"
+      "file": "chapter_040__reversal-of-fate.html"
     },
     {
       "order": 5,
       "title": "Chapter 3: Guidance and Direction",
-      "file": "_C0003.html"
+      "file": "chapter_050__guidance-and-direction.html"
     },
     {
       "order": 6,
       "title": "Chapter 4: To Be Queen",
-      "file": "_C0004.html"
+      "file": "chapter_060__to-be-queen.html"
     },
     {
       "order": 7,
-      "title": "Chapter 5: Revelations",
-      "file": "_C0005.html"
+      "title": "Chapter 5: The Weight of Truth",
+      "file": "chapter_070__the-weight-of-truth.html"
     },
     {
       "order": 8,
-      "title": "Chapter 6.1: Lost",
-      "file": "_C0006.1.html"
+      "title": "Chapter 6: Lost",
+      "file": "chapter_080__lost.html"
     },
     {
       "order": 9,
-      "title": "Chapter 6.2: But Not Forgotten",
-      "file": "_C0006.2.html"
+      "title": "Chapter 7: But Not Forgotten",
+      "file": "chapter_090__but-not-forgotten.html"
     },
     {
       "order": 10,
-      "title": "Chapter 7: In Search of Answers",
-      "file": "_C0007.html"
+      "title": "Chapter 8: In Search of Answers",
+      "file": "chapter_100__in-search-of-answers.html"
     },
     {
       "order": 11,
-      "title": "Chapter 8: At the Temple of Time",
-      "file": "_C0008.html"
+      "title": "Chapter 9: The Timeless Vault",
+      "file": "chapter_110__the-timeless-vault.html"
     },
     {
       "order": 12,
-      "title": "Chapter 9: Link’s Awakening",
-      "file": "_C0009.html"
+      "title": "Chapter 10: Awakening",
+      "file": "chapter_120__awakening.html"
     },
     {
       "order": 13,
-      "title": "Chapter 10: First of the Sunseekers",
-      "file": "_C0010.html"
+      "title": "Chapter 11: First of the Sunseekers",
+      "file": "chapter_130__first-of-the-sunseekers.html"
     },
     {
       "order": 14,
-      "title": "Chapter 11: Sands and Sun",
-      "file": "_C0011.html"
+      "title": "Chapter 12: Sands and Sun",
+      "file": "chapter_140__sands-and-sun.html"
     },
     {
       "order": 15,
-      "title": "Chapter 12: Dreams of the Damned",
-      "file": "_C0012.html"
+      "title": "Chapter 13: Dreams of the Damned",
+      "file": "chapter_150__dreams-of-the-damned.html"
     },
     {
       "order": 16,
-      "title": "Chapter 13: The Face of the Enemy",
-      "file": "_C0013.html"
+      "title": "Chapter 14: The Face of the Enemy",
+      "file": "chapter_160__the-face-of-the-enemy.html"
     },
     {
       "order": 17,
-      "title": "Chapter 14: Inquiring Minds",
-      "file": "_C0014.html"
+      "title": "Chapter 15: Queries and Half Answers",
+      "file": "chapter_170__queries-and-half-answers.html"
     },
     {
       "order": 18,
-      "title": "Chapter 15: Catharsis",
-      "file": "_C0015.html"
+      "title": "Chapter 16: Catharsis",
+      "file": "chapter_180__catharsis.html"
     },
     {
       "order": 19,
-      "title": "Chapter 16: The Obsidian Spire (1/3)",
-      "file": "_C0016.html"
+      "title": "Chapter 17: The Obsidian Spire (Part 1)",
+      "file": "chapter_190__the-obsidian-spire-1.html"
     },
     {
       "order": 20,
-      "title": "Chapter 17: The Obsidian Spire (2/3)",
-      "file": "_C0017.html"
+      "title": "Chapter 18: The Obsidian Spire (Part 2)",
+      "file": "chapter_200__the-obsidian-spire-2.html"
     },
     {
       "order": 21,
-      "title": "Chapter 18: The Obsidian Spire (3/3)",
-      "file": "_C0018.html"
+      "title": "Chapter 19: The Obsidian Spire (Part 3)",
+      "file": "chapter_210__the-obsidian-spire-3.html"
     },
     {
       "order": 22,
-      "title": "Chapter 19: Loose Ends",
-      "file": "_C0019.html"
+      "title": "Chapter 19: The Obsidian Spire (Part 3B)",
+      "file": "chapter_211__the-obsidian-spire-3b.html"
     },
     {
       "order": 23,
-      "title": "Chapter 20: Entitled Opinions",
-      "file": "_C0020.html"
+      "title": "Chapter 20: Loose Ends",
+      "file": "chapter_220__loose-ends.html"
     },
     {
       "order": 24,
-      "title": "Chapter 21: Patience, and Other Lost Arts",
-      "file": "_C0021.html"
+      "title": "Chapter 21: Entitled Opinions",
+      "file": "chapter_230__entitled-opinions.html"
     },
     {
       "order": 25,
-      "title": "Chapter 22.1: Ibboso the Bold",
-      "file": "_C0022.1.html"
+      "title": "Chapter 22: Patience, and Other Lost Arts",
+      "file": "chapter_240__patience-and-other-lost-arts.html"
     },
     {
       "order": 26,
-      "title": "Chapter 22.2: Ibboso the Damned",
-      "file": "_C0022.2.html"
+      "title": "Chapter 23: Ibboso the Bold",
+      "file": "chapter_250__ibboso-the-bold.html"
     },
     {
       "order": 27,
-      "title": "Chapter 23: To Buy a Kingdom",
-      "file": "_C0023.html"
+      "title": "Chapter 24: Ibboso the Damned",
+      "file": "chapter_260__ibboso-the-damned.html"
     },
     {
       "order": 28,
-      "title": "Chapter 24: Fortune Finds the Bold",
-      "file": "_C0024.html"
+      "title": "Chapter 25: To Buy a Kingdom",
+      "file": "chapter_270__to-buy-a-kingdom.html"
     },
     {
       "order": 29,
-      "title": "Chapter 25: Rendezvous",
-      "file": "_C0025.html"
+      "title": "Chapter 26: Fortune Finds the Bold",
+      "file": "chapter_280__fortune-finds-the-bold.html"
     },
     {
       "order": 30,
-      "title": "Chapter 26: Cataclysm’s Eve",
-      "file": "_C0026.html"
+      "title": "Chapter 27: Rendezvous",
+      "file": "chapter_290__rendezvous.html"
     },
     {
       "order": 31,
-      "title": "Chapter 27: Gugwayah",
-      "file": "_C0027.html"
+      "title": "Chapter 28: Cataclysm’s Eve",
+      "file": "chapter_300__cataclysms-eve.html"
     },
     {
       "order": 32,
-      "title": "Chapter 28: Mending Wounds",
-      "file": "_C0028.html"
+      "title": "Chapter 29: Gugwayah",
+      "file": "chapter_310__gugwayah.html"
     },
     {
       "order": 33,
-      "title": "Chapter 29: Finding Wisdom",
-      "file": "_C0029.html"
+      "title": "Chapter 30: Mending Wounds",
+      "file": "chapter_320__mending-wounds.html"
     },
     {
       "order": 34,
-      "title": "Chapter 30: Pondering Reflections",
-      "file": "_C0030.html"
+      "title": "Chapter 31: Finding Wisdom",
+      "file": "chapter_330__finding-wisdom.html"
     },
     {
       "order": 35,
-      "title": "Chapter 31: The Mind’s Eye",
-      "file": "_C0031.html"
+      "title": "Chapter 32: Pondering Reflections",
+      "file": "chapter_340__pondering-reflections.html"
     },
     {
       "order": 36,
-      "title": "Chapter 32: Confrontations",
-      "file": "_C0032.html"
+      "title": "Chapter 33: The Mind’s Eye",
+      "file": "chapter_350__the-minds-eye.html"
     },
     {
       "order": 37,
-      "title": "Chapter 33: Betrayal and Trust",
-      "file": "_C0033.html"
+      "title": "Chapter 34: Confrontations",
+      "file": "chapter_360__confrontations.html"
     },
     {
       "order": 38,
-      "title": "Chapter 34: The Ruined Palace",
-      "file": "_C0034.html"
+      "title": "Chapter 34: Confrontations (Part 2)",
+      "file": "chapter_361__confrontations-b.html"
     },
     {
       "order": 39,
-      "title": "Chapter 35: The Queen’s Odyssey",
-      "file": "_C0035.html"
+      "title": "Chapter 35: Betrayal and Trust",
+      "file": "chapter_370__betrayal-and-trust.html"
     },
     {
       "order": 40,
-      "title": "Chapter 36.1: The Deepest Abyss",
-      "file": "_C0036.1.html"
+      "title": "Chapter 36: The Ruined Palace",
+      "file": "chapter_380__the-ruined-palace.html"
     },
     {
       "order": 41,
-      "title": "Chapter 36.2: Exit Stage Right",
-      "file": "_C0036.2.html"
+      "title": "Chapter 37: The Queen’s Odyssey",
+      "file": "chapter_390__the-queens-odyssey.html"
     },
     {
       "order": 42,
-      "title": "Chapter 37: Ascension",
-      "file": "_C0037.html"
+      "title": "Chapter 38: The Deepest Abyss",
+      "file": "chapter_400__the-deepest-abyss.html"
     },
     {
       "order": 43,
+      "title": "Chapter 38: The Deepest Abyss (Part 2)",
+      "file": "chapter_401__the-deepest-abyss-b.html"
+    },
+    {
+      "order": 44,
+      "title": "Chapter 39: Exit Stage Right",
+      "file": "chapter_410__exit-stage-right.html"
+    },
+    {
+      "order": 45,
+      "title": "Chapter 40: Ascension",
+      "file": "chapter_420__ascension.html"
+    },
+    {
+      "order": 46,
       "title": "Epilogue: By Blood and Silver, Sworn",
-      "file": "_X1.html"
+      "file": "chapter_430__epilogue-by-blood-and-silver-sworn.html"
     }
   ]
 }
