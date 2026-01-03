@@ -3,6 +3,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { CryptoAddress } from "@/components/crypto-address"
 
 export const metadata: Metadata = {
   title: "Creative Writing Collection",
@@ -38,8 +39,29 @@ export default function RootLayout({
           </header>
           <main>{children}</main>
           <footer className="border-t border-border mt-12 py-6">
-            <div className="container mx-auto px-4 text-center text-sm text-gray-500 dark:text-gray-400">
-              © {new Date().getFullYear()} Nyx Edelstein
+            <div className="container mx-auto px-4">
+              {/* Support Section */}
+              <div className="text-center mb-6 pb-6 border-b border-border/50">
+                <p className="text-sm text-muted-foreground mb-4">
+                  If you enjoy these works and would like to support my creative projects, donations are gratefully appreciated.
+                </p>
+                <div className="flex justify-center items-center gap-8 flex-wrap">
+                  <CryptoAddress
+                    address="bc1qjg7qeev4lqsq6r0gg6rtjf2hjm75lwnl3szx69"
+                    currency="BTC"
+                    imageUrl="/img/btc.PNG"
+                  />
+                  <CryptoAddress
+                    address="0xb8D418882041bBfFd3155FDE57515B37429708c1"
+                    currency="ETH"
+                    imageUrl="/img/eth.PNG"/>
+                </div>
+              </div>
+              
+              {/* Copyright */}
+              <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+                © {new Date().getFullYear()} Nyx Edelstein
+              </div>
             </div>
           </footer>
         </ThemeProvider>

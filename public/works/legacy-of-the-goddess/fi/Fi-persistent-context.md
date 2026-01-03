@@ -18,7 +18,7 @@
 
 ### Current Project: "Dossier Ω-7 - The Woman from the Future That Never Was"
 **Genre**: SCP-style intelligence document (1,000-2,000 words)
-**Author Voice**: Vian (Sheikah Spymaster)
+**Author Voice**: Vian (Spymaster)
 **Subject**: Shesan (interdimensional refugee/Shadow Dancers operative)
 **Temporal Setting**: Pre-Appendix A2 (before Vian's strategic execution Chapter 2)
 **Canonical Format**: Standalone work in dossier-omega-seven subdirectory
